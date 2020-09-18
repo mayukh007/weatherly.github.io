@@ -15,7 +15,7 @@ $(document).ready(function(){
     var loc = data.name;
    console.log(city);
     $('.place').text(`${loc},${cont}`);
-    var icon = "http://openweathermap.org/img/wn/"+data.weather[0].icon+".png";
+    var icon = "https://openweathermap.org/img/wn/"+data.weather[0].icon+".png";
     console.log(icon);
     var weather = data.weather[0].main;
     
