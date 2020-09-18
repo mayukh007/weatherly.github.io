@@ -1,27 +1,44 @@
 <!DOCTYPE html>
 <html lang = "en">
 <head><meta charset = "UTF-8">
-	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+	<link rel="icon" href="photo/OIP(1).svg">
+
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <script
-  src="https://code.jquery.com/jquery-3.5.1.min.js"
-  integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0="
-  crossorigin="anonymous"></script>
-  <link rel="stylesheet" href = "https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    
+     <link rel="stylesheet" href = "https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"> </script>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
   
     <script src="script.js"></script>
-    <link rel="stylesheet" href="style.css">
-    <title>weather app</title></head>
+   <link rel="stylesheet" href="style.css">
+    <title>Weatherly</title></head>
 <body>
+   <nav class = "navbar navbar-dark navbar-expand-sm fixed-top">
+        <div class= "container">
+          <button class = "navbar-toggler" type="button" data-toggle="collapse" data-target="#Navbar">
+            <span class = "navbar-toggler-icon"></span>
+          </button>
+          <div class = "collapse navbar-collapse" id = "Navbar">
+              <ul class = "navbar-nav mr-auto">
+                <li class = "nav-item"><a class="nav-link " href="#s"><span class ="fa fa-search fa-lg"></span> Search</a></li>
+                <li class = "nav-item"><a class="nav-link " href="#card"><span class = "fa fa-cloud fa-lg"></span> Weather Report</a></li>  
+                <li class = "nav-item"><a class="nav-link " href="#about-page"><span class = "fa fa-info fa-lg"></span> About Page</a></li>
+                <li class = "nav-item"><a class="nav-link " href="#contect"><span class = "fa fa-info fa-lg"></span> About ME</a></li>     
+              </ul>
+            </div>
+        </div>
+      </nav>
     <header class = "jumbotron">
         <div class="container">
             <div class="row">
               <div class="col-12 col-sm-1">
-                  <img src = "photo/OIP (1).svg" alt="weather app" class = "media">
+                  <img src = "photo/OIP(1).svg" alt="weather app" class = "media">
              </div>
                 <div class="col-12 col-sm-6	">
                     
-                  <h1 class="text-justify">weatherly</h1>
+                  <h1 class="text-justify">Weatherly</h1>
                       <p>we provide accurate current weather conditions of your city</p>
                     
                 </div>
@@ -36,11 +53,11 @@
                    
                     <div class = "form-group row no-gutters">
                      
-                    <div class = "col-9 col-sm-8">
-                      <input type="text" id = "city-name" placeholder="enter your city name" class="form-control" style="display:inline;"></input>
+                    <div class = "col-9 col-sm-8" id ="s">
+                      <input type="text" id = "city-name" placeholder="enter your city name" class="form-control" style="display:inline;">
                     </div>
                   
-                    <div class = "col-9 col-sm-4">
+                    <div class = "col-3 col-sm-4">
                     <button type="submit" class = "btn btn-info" style="display:inline;"  id ="search"><i class="fa fa-search" aria-hidden="true"></i>
                     </button> 
                   </div>
@@ -53,17 +70,22 @@
     <div class="content container">
         <div class="row justify-content-center">
             <div class="col-12 col-sm-4">               
-                <div class="card">
-                    <div class="card-header text-white text-center"><b>Weather Report</b>
+                <div class="card" id = "card">
+                    <div class="head text-dark text-center"><b>Weather Report</b>
                     </div>
                     <div class = "card-body">
+                         <!--   <img class="d-flex mr-3 align-self-center img"
+                            src="photo/evening.jpg" alt="evening">-->
+                        
                         <div class="weather-container">
-                            <p class="place"></p>
                             <img class = "icon" style="display: inline;">
-                            <p class = "temp-out" style="display: inline;"><i style="padding-left:5%;padding-right:10%;"class="fa fa-thermometer-empty fa-2x" aria-hidden="true"></i>temp: <span class="temp"></span><b>C</b></p>
-                            <p style="float:right;" >feels_like: <span class = "temp2" ></span>C</p>
-                            <p class = "weather" style="float:left;"></p>
-                            <img src="photo/man.png" class="man">
+                            <p class = "weather" style="display: inline;" ></p>
+                            <p class = "date" style="display: inline;"></p>
+                            <br>
+                            <p class = "temp-out"  style="display: inline;padding-right: 10%;"><i style="padding-left:5%;padding-right:10%;" class="fa fa-thermometer-empty fa-2x" aria-hidden="true"></i>temp: <span class="temp"></span><b>C</b></p>
+                            <p style="display: inline;" class ="feels">feels_like: <span class = "temp2" ></span>C</p>
+                            <p class="place text-center" style="margin-top:3px;"></p>
+                            <p class = "time text-center"></p>
                         </div>
                       
                     </div>
@@ -71,5 +93,38 @@
              </div>
         </div>
     </div>
+    <footer class = "page-footer stylish-color-dark pt-4" id = "foot">
+		<!--<img src = "../images/wp3170346.jpg"/>-->
+		<div class = "container">
+			<div class = "row b">
+				<div class = "col-sm-4 text-center">
+					<h3  id= "about-page">About Page</h3>
+					<p class = "b pad">Weatherly gives users the accurate  details of temprature condition in their city for that current Time. the page uses an very popular API openweather and give details like temprature weather conditons at the moment. User needs to enter the corret city name in order to get the weather conditions in their city.
+                    </p>
+				</div>
+				<div class = "col-sm-4 text-center b">
+                    <h3 class = "pad" id ="contect">About Me</h3>
+                    <p>Web development enthusiast learning new things every day and creating some thing unique</p>
+					<a href="https://www.linkedin.com/in/mayukh-joshi-74565a191/" id ="con1" class = "col"><i class="fa fa-linkedin-square fa-2x"></i></a>
+					<a href="https://github.com/mayukh007" class = "col"><i class="fa fa-github-alt fa-2x"></i></a>
+                    <a href="https://www.freecodecamp.org/thedarkcoder-m" class = "col"><i class="fa fa-free-code-camp fa-2x"></i></a>
+                    <a href="mailto:www.mayukhjoshi262@gmai.com" class = "col"><i class = "fa fa-envelope fa-2x"></i></a>
+                </div>
+                <div class="col-12 col-sm-4 text-center">
+                    <h3 class="text-center"><b>Links</b></h3>
+                    <a href="#s" class = "links">Search</a>
+                    <a href = "#card" class = "links">Weather Card</a>
+                    <a href="#contect" class = "links">About Me</a>
+                    <a href="#about-page" class = "links">About page</a>
+                    
+                </div>
+				<div class = "col-sm-12 text-center pad">
+					<p>&copy; Mayukh Joshi</p>
+				</div>
+			</div>
+		</div>
+    </footer>
+
+
 </body>
 </html>
