@@ -48,7 +48,7 @@ body{
 }
 .weather-container{
     display: none;
-    transition-duration: 1s;
+    
 }
 .icon{
     width:100px;
