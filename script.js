@@ -9,7 +9,7 @@ $(document).ready(function(){
            alert("enter a valid city name");
            return;
        }
-    $.getJSON("http://api.openweathermap.org/data/2.5/weather?q="+city+"&appid=418d13552f9593b66c9411c801035aa2", function(data){
+    $.getJSON("https://api.openweathermap.org/data/2.5/weather?q="+city+"&appid=418d13552f9593b66c9411c801035aa2", function(data){
     console.log(data);
     var cont = data.sys.country;
     var loc = data.name;
